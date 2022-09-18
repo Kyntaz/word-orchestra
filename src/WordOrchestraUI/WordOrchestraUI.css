@@ -1,0 +1,31 @@
+body {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}
+
+.world-orchestra-ui {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    justify-content: center;
+    transition: background-color 5s;
+}
+
+.world-orchestra-ui input {
+    width: 100%;
+    text-align: center;
+    border: none;
+    font-size: 50px;
+    background-color: transparent;
+    color: white;
+    mix-blend-mode: exclusion;
+    text-shadow: 0 0 10px red;
+}
+
+.world-orchestra-ui input::placeholder {
+    color: white;
+    opacity: 0.5;
+}

@@ -1,5 +1,3 @@
-document.open();
-document.write("Hello world!");
-document.close();
+import { WordOrchestra } from "./WordOrchestra";
 
-export {};
+WordOrchestra.initialize();
