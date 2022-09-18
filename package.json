@@ -1,0 +1,26 @@
+{
+  "name": "word-orchestra",
+  "version": "0.0.0",
+  "private": "true",
+  "scripts": {
+    "dev": "npx vite",
+    "build": "npm run check && npm run build:vite",
+    "build:vite": "npx vite build",
+    "check": "npx tsc",
+    "preview": "npx vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kyntaz/word-orchestra.git"
+  },
+  "author": "Pedro Quintas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kyntaz/word-orchestra/issues"
+  },
+  "homepage": "https://github.com/Kyntaz/word-orchestra#readme",
+  "devDependencies": {
+    "typescript": "^4.8.3",
+    "vite": "^3.1.2"
+  }
+}
