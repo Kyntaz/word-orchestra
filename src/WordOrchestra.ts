@@ -7,7 +7,7 @@ export const WordOrchestra = class {
         (w as any).WordOrchestra = new WordOrchestra(w);
     }
 
-    constructor(w = window) {
+    constructor (w = window) {
         this.ui = new WordOrchestraUI({
             parentNode: w.document.getElementById("root") ?? w.document.body,
         });
