@@ -2,6 +2,11 @@
 
 Turning your thoughts into music.
 
+## 🔗 Live Project
+
+You can view the project at the following link:
+https://kyntaz.github.io/word-orchestra/
+
 ## 📜 Scripts
 
 The following npm scripts are available for this project:
