@@ -1,3 +1,4 @@
+import { SentimentAnalysis } from "./SentimentAnalysis";
 import { IWordOrchestraUI, WordOrchestraUI } from "./WordOrchestraUI/WordOrchestraUI";
 
 export const WordOrchestra = class {
@@ -10,6 +11,10 @@ export const WordOrchestra = class {
     constructor (w = window) {
         this.ui = new WordOrchestraUI({
             parentNode: w.document.getElementById("root") ?? w.document.body,
+            onInput: async (value) => {
+                const result = await SentimentAnalysis.analyze(value);
+                console.log({ value, result });
+            },
         });
     }
 }

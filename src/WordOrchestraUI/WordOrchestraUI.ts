@@ -34,10 +34,9 @@ export const WordOrchestraUI = class implements IWordOrchestraUI {
     }
 
     #setValueChangeCallback = () => {
-        const element = this.#root.querySelector<HTMLInputElement>("input");
+        const element = this.#root.querySelector<HTMLInputElement>("textarea");
         if (!element) {
-            console.error(new Error("Could not set value change callback."));
-            return;
+            return console.error(new Error("Could not set value change callback."));
         }
 
         element.addEventListener("change", () => {
