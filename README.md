@@ -17,3 +17,7 @@ npm run check # Runs the type checker and linter
 npm run build # Builds the project
 npm run preview # Previews the current build of the project
 ```
+
+## 📖 Documents
+
+You can check out the documentation on the multiple components that make up the project [here](docs/components.md).
