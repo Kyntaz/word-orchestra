@@ -6,13 +6,16 @@ export type SentimentAnalysisResult = {
     politeness: number;
     dirtiness: number;
     chaos: number;
-}
+};
 
-export const SentimentAnalysis = {
-    analyze: async (sentence: string) => {
+export type ISentimentAnalysis = {
+    analyze: (sentence: string) => Promise<SentimentAnalysisResult[]>;
+};
+
+export const SentimentAnalysis: ISentimentAnalysis = class {
+    static analyze = async (sentence: string) => {
         return new Promise<SentimentAnalysisResult[]>((resolve) => {
             const analysis = compendium.analyse(sentence);
-            console.log({ analysis });
             const results = analysis.map((props: any) => ({
                 sentiment: props.profile.sentiment,
                 intensity: props.profile.amplitude,
@@ -23,4 +26,4 @@ export const SentimentAnalysis = {
             return resolve(results);
         });
     }
-}
+};
