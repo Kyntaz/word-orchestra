@@ -1,16 +1,24 @@
 import { SentimentAnalysis } from "./SentimentAnalysis";
 import { IWordOrchestraUI, WordOrchestraUI } from "./WordOrchestraUI/WordOrchestraUI";
 
-export const WordOrchestra = class {
+export type IWordOrchestra = {
+    ui: IWordOrchestraUI;
+}
+
+export const WordOrchestra = class implements IWordOrchestra {
     ui: IWordOrchestraUI;
 
-    static initialize = (w = window) => {
-        (w as any).WordOrchestra = new WordOrchestra(w);
+    static initialize = () => {
+        (window as any).WordOrchestra = new WordOrchestra();
     }
 
-    constructor (w = window) {
+    static getInstance = () => {
+        return (window as any).WordOrchestra as IWordOrchestra | undefined;;
+    }
+
+    constructor () {
         this.ui = new WordOrchestraUI({
-            parentNode: w.document.getElementById("root") ?? w.document.body,
+            parentNode: window.document.getElementById("root") ?? window.document.body,
             onInput: async (value) => {
                 const result = await SentimentAnalysis.analyze(value);
                 console.log({ value, result });

@@ -1,18 +1,11 @@
-import { IParameter, Parameter } from "../Parameter";
 import "./WordOrchestraUI.css";
 import template from "./WordOrchestraUI.html?raw";
 
 export type IWordOrchestraUI = {
-    parameters: {
-        backgroundColor: IParameter<string>,
-    },
+    setBackgroundColor: (color: string) => void;
 };
 
 export const WordOrchestraUI = class implements IWordOrchestraUI {
-    parameters = {
-        backgroundColor: new Parameter("black"),
-    };
-
     #root: HTMLElement;
     #onInput: (value: string) => void;
 
@@ -29,8 +22,6 @@ export const WordOrchestraUI = class implements IWordOrchestraUI {
         this.#onInput = onInput;
 
         this.#setValueChangeCallback();
-
-        this.parameters.backgroundColor.subscribe(this.#setBackgroundColor);
     }
 
     #setValueChangeCallback = () => {
@@ -47,7 +38,7 @@ export const WordOrchestraUI = class implements IWordOrchestraUI {
         });
     }
 
-    #setBackgroundColor = (color: string) => {
+    setBackgroundColor = (color: string) => {
         this.#root.style.backgroundColor = color;
     }
 }

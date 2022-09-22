@@ -11,7 +11,7 @@ body {
     align-items: center;
     background-color: black;
     justify-content: center;
-    transition: background-color 5s;
+    transition: background-color 30s;
 }
 
 .word-orchestra-ui textarea {
